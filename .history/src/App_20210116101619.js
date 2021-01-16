@@ -1,12 +1,13 @@
 import './App.css';
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo, toggleTodo, setFilter } from "./redux/actions";
+import { addTodo } from "../redux/actions";
 import cx from "classnames";
 // import { getTodoById } from "../redux/selectors";
+import { toggleTodo } from "../redux/actions";
 import { useSelector } from "react-redux";
-import { getTodos } from "./redux/selectors";
-import { VISIBILITY_FILTERS } from "./constants";
+import { getTodos } from "../redux/selectors";
+import { VISIBILITY_FILTERS } from "../constants";
 
 function App() {
   return (

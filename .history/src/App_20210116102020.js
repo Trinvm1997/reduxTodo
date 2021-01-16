@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo, toggleTodo, setFilter } from "./redux/actions";
+import { addTodo, toggleTodo } from "./redux/actions";
 import cx from "classnames";
 // import { getTodoById } from "../redux/selectors";
 import { useSelector } from "react-redux";

@@ -1,12 +1,13 @@
 import './App.css';
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo, toggleTodo, setFilter } from "./redux/actions";
+import { addTodo } from "../redux/actions";
 import cx from "classnames";
 // import { getTodoById } from "../redux/selectors";
+import { toggleTodo } from "../redux/actions";
 import { useSelector } from "react-redux";
-import { getTodos } from "./redux/selectors";
-import { VISIBILITY_FILTERS } from "./constants";
+import { getTodos } from "../redux/selectors";
+import { VISIBILITY_FILTERS } from "../constants";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
   );
 }
 
-export const AddTodo = props => {
+const AddTodo = props => {
   const [input, setInput] = useState(undefined);
   const dispatch = useDispatch();
 
@@ -33,7 +34,7 @@ export const AddTodo = props => {
   );
 };
 
-export const Todo = ({ todo }) => {
+const Todo = ({ todo }) => {
   const dispatch = useDispatch();
   return (
     <li className="todo-item" onClick={() => dispatch(toggleTodo(todo.id))}>
@@ -50,7 +51,7 @@ export const Todo = ({ todo }) => {
   );
 };
 
-export const TodoList = () => {
+const TodoList = () => {
   const visibilityFilter = useSelector(state => state.visibilityFilter);
   const allTodos = useSelector(getTodos);
   const todos =
@@ -71,7 +72,7 @@ export const TodoList = () => {
   );
 };
 
-export const VisibilityFilters = () => {
+const VisibilityFilters = () => {
   const activeFilter = useSelector(state => state.visibilityFilter);
   const dispatch = useDispatch();
   return (
