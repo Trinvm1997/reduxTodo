@@ -47,7 +47,7 @@ export const Todo = ({ todo }) => {
       >
         {todo.content}
       </span>
-      <button onClick={() => dispatch(editTodo(todo.id))}>edit</button>
+      <button onClick={() => dispatch(editTodo(todo.id,todo.content))}>edit</button>
     </li>
   );
 };

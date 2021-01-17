@@ -15,9 +15,12 @@ export const toggleTodo = id => ({
   payload: { id }
 });
 
-export const editTodo = id => ({
+export const editTodo = (id, content) => ({
   type: EDIT_TODO,
-  payload: { id }
+  payload: {
+    id,
+    content: content.concat("edited")
+  }
 })
 
 export const setFilter = filter => ({ type: SET_FILTER, payload: { filter } });

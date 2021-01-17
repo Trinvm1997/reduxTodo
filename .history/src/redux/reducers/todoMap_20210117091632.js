@@ -23,13 +23,14 @@ const todoMap = (state = defaultState, action) => {
       };
     }
     case EDIT_TODO: {
-      const { id } = action.payload;
+      const { id } = action.payload.id;
+      const { content } = action.payload.content;
       const currentTodo = state[id];
-      currentTodo.content += "edited";
-      console.log(currentTodo);
+      let current = content.concat("edited");
+      console.log(content);
       return {
         ...state,
-        [id]: { ...currentTodo,completed: currentTodo.completed}
+        [id]: { current,completed: currentTodo.completed}
       }
     }
     default:

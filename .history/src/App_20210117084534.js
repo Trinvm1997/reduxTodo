@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo, toggleTodo, setFilter, editTodo } from "./redux/actions";
+import { addTodo, toggleTodo, setFilter } from "./redux/actions";
 import cx from "classnames";
 // import { getTodoById } from "../redux/selectors";
 import { useSelector } from "react-redux";
@@ -47,7 +47,7 @@ export const Todo = ({ todo }) => {
       >
         {todo.content}
       </span>
-      <button onClick={() => dispatch(editTodo(todo.id))}>edit</button>
+      <button onClick={() => dispatch()}>edit</button>
     </li>
   );
 };

@@ -25,7 +25,7 @@ const todoMap = (state = defaultState, action) => {
     case EDIT_TODO: {
       const { id } = action.payload;
       const currentTodo = state[id];
-      currentTodo.content += "edited";
+      // const current = currentTodo + "edited";
       console.log(currentTodo);
       return {
         ...state,
